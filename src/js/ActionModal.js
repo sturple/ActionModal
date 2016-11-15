@@ -7,7 +7,9 @@
 					trigger : '.md-trigger',
 					cookie : 'newsignup',
 					duration : 1,
+					ganalytics: true,
 					container : 'body',
+					title : 'Special',
 					id : 'modal-16',
 					class : 'md-effect-16',
 					style : {'background' : '#d91924','color' : '#fff'}				
@@ -17,6 +19,9 @@
 				
 				self.generateModal();
 				$(self.options.container).find(self.options.trigger || '.md-trigger').on('click',function(e){	
+					if ((self.options.ganalytics) && ( typeof ga === 'function')){
+						ga('send','event','show','ModalAction: '+self.options.title);
+					}
 					var modelSelector = $(this).attr('data-modal');
 					if ($(modelSelector).length > 0) {		
 						$(modelSelector).addClass('md-show');

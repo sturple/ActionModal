@@ -1,6 +1,15 @@
-# Newsletter sign up 
+# Action Modal 
 
-Creates a newsletter modal using cookie
+Creates a newsletter modal using cookie or some other event model 
+Triggers via cookie or trigger selector.Triggers
+
+## Requires
+
+* Jquery
+
+## Demo
+
+[Demo](http://dev.fifthgeardev.com/ActionModal/demo/)
 
 ## Usage
 
@@ -24,7 +33,7 @@ Creates a newsletter modal using cookie
 ```
 ### javascript and setting up options
 
-```
+```javascript
 <script type="text/javascript">
   $(function(){
   var options = {
@@ -73,7 +82,7 @@ var nls = new ActionModal(options);
 
 ### Template code
 
-```
+```html
 <script type="text/template" id="signuptemplate">
   <div class="md-modal">				
     <div class="md-content">
