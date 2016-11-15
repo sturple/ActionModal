@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../distro/css/style.css" />		
+		
+	</head>
+	<body>	
+		<div class="container">
+			<div class="main clearfix">
+				<div class="column">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis suscipit sapien, non pulvinar sem semper at. Donec nec metus sem. Nullam dignissim in eros nec iaculis. In euismod, felis non pretium faucibus, quam sapien porta mauris, eu eleifend risus libero sit amet purus. Aenean hendrerit velit sed dolor luctus convallis. Suspendisse laoreet, neque eget consequat congue, tortor leo vulputate lectus, ac eleifend velit nulla eget ex. Vivamus arcu erat, euismod ac rutrum iaculis, molestie vel ante. Cras nec arcu tempus, fringilla tellus ut, scelerisque elit. Proin at lacinia ex, sed maximus velit. Praesent ac nisi scelerisque, cursus erat lacinia, placerat sapien. Ut eleifend in sem eget aliquam. Sed malesuada ante lacus. Sed ultricies sed orci ut congue. Nunc consectetur mattis neque vitae dapibus.
+				</div>
+				<div class="column">					
+					<button class="md-trigger btn btn-primary" data-modal="#modal-16">Blur</button>
+				</div>
+			</div>
+		</div><!-- /container -->
+		<div class="md-overlay"></div><!-- the overlay element -->
+
+		<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+		<script   src="../distro/js/ActionModal.min.js"  ></script>
+		
+		<script type="text/javascript">			
+		$(function(){
+			var options = {
+			title : 'Newsletter Signup',			
+			form: {
+				atts : {
+					action : 'http://createsend.com/a/b/c/abc/',
+					method : 'post'
+				}				
+			},
+			fields : [				
+			{							
+				type : 'text',
+				atts : {
+					name : 'cm-f-abcd',
+					'class' : 'form-control',
+					placeholder :'Name'
+				},
+				label:{	title :  'Name',	'class': 'sr-only'	}
+
+				},			
+				{					
+					type : 'text',
+					atts : {
+						name : 'cm-abcd-abcd',
+						'class' : 'form-control',
+						placeholder : 'Email',
+						required : 'required'
+					},				
+					label:{title :  'Email','class': 'sr-only'}
+				},	
+
+				{					
+					type: 'submit',
+					atts : {
+						'class' : 'btn btn-primary',
+						'value' : 'SignUp'
+					}
+				}
+			]
+		};
+		var nls = new ActionModal(options);
+		});
+		</script>
+		<script type="text/template" id="signuptemplate">
+			<div class="md-modal">				
+				<div class="md-content">
+					<button type="button" class="md-close close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h3 class="md-title">Modal Dialog</h3>
+					<div class="md-html">
+						<div class="row">
+							<div class="col-sm-6">
+								<img src="images/sample.jpg" class="img-responsive" alt="alt text" />
+								<p><strong>$100 VALUE</strong><div>FREE Sign up every week for your chance to win.</div></p>
+							</div>
+							<div class="col-sm-6">
+								<div class="form"></div>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</script>
+	</body>
+</html>
