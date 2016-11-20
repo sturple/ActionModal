@@ -5,6 +5,7 @@
 		    var defaults = {
 		      template: '#signuptemplate',
 		      trigger: '.md-trigger',
+		      triggerscroll: 75,
 		      cookie: 'newsignup',
 		      duration: 1,
 		      ganalytics: true,
@@ -19,7 +20,6 @@
 
 		    };
 		    this.options = $.extend(options, defaults);
-
 		    self.generateModal();
 		    $(self.options.container).find(self.options.trigger || '.md-trigger').on('click', function(e) {
 		      if ((self.options.ganalytics) && (typeof ga === 'function')) {
@@ -36,12 +36,14 @@
 		        e.stopPropagation();
 		      }
 		    });
-
-		    if (!(self.getCookie(self.options.cookie)) && (self.options.cookie)) {
-		      var duration = self.options.duration || 1;
-		      self.setCookie(self.options.cookie, 1, duration);
-		      $(self.options.container).find(self.options.trigger || '.md-trigger').trigger('click');
-		    }
+		    $(window).trigger('scroll');
+		    $(window).scroll(function(e) {
+		      if (($(this).scrollTop() > self.options.triggerscroll) && !(self.getCookie(self.options.cookie)) && (self.options.cookie)) {
+		        var duration = self.options.duration || 1;
+		        self.setCookie(self.options.cookie, 1, duration);
+		        $(self.options.container).find(self.options.trigger || '.md-trigger').trigger('click');
+		      }
+		    });
 		    return this;
 		  }
 
@@ -117,7 +119,6 @@
 		      var expires = "expires=" + d.toUTCString();
 		      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 		    }
-
 		  };
 		  this.ActionModal = ActionModal;
 		})(jQuery);
